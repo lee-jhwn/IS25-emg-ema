@@ -10,8 +10,8 @@ import librosa
 import tqdm
 
 def evaluate(testset, audio_directory):
-    model = deepspeech.Model('deepspeech-0.7.0-models.pbmm')
-    model.enableExternalScorer('deepspeech-0.7.0-models.scorer')
+    model = deepspeech.Model('deepspeech-0.9.3-models.pbmm')
+    model.enableExternalScorer('deepspeech-0.9.3-models.scorer')
     predictions = []
     targets = []
     for i, datapoint in enumerate(tqdm.tqdm(testset, 'Evaluate outputs', disable=None)):
