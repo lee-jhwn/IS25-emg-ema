@@ -23,7 +23,7 @@ dependencies:
   - tqdm=4.67.1
   - unicodedata2=16.0.0
   - unidecode=1.3.8
-  - yaml=0.2.5=h7f98852_2
+  - yaml=0.2.5
   - pip:
       - deepspeech==0.9.3
       - jiwer==2.2.1
