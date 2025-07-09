@@ -1,0 +1,12 @@
+--output_directory=logs/config_example
+--ema_resample=86.16
+--emg_resample=689.06
+--stride_sizes=2,2,2
+--pitch_norm=true
+--loudness_norm=false
+--loudness_loss_weight=1.0
+--pitch_loss_weight=0.5
+--pitch_minus=130
+--pitch_div=70
+--learning_rate=5e-4
+--epochs=150
