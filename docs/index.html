@@ -1,0 +1,257 @@
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$$', '$$']], displayMath: [['$$$', '$$$']] }
+    });
+    </script>
+    <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Sample page for Articulatory Feature Prediction from Surface EMG during Speech Production (Interspeech 2025)</title>
+    </head>
+    <body>
+    <h1>Articulatory Feature Prediction from Surface EMG during Speech Production</h1>
+    <h2>Interspeech 2025</h2>
+        <h4>Paper: <a href="https://arxiv.org/abs/2505.13814">Click here</a></h4>
+        <h4>Code: <a href="https://github.com/lee-jhwn/IS25-emg-ema">Click here</a></h4>
+
+
+    <!--link rel="stylesheet" type="text/css" href="../../stylesheet.css"-->
+    <div><hr />
+      
+    <article>
+    <!-- <h4>Paper : <a href="linktopaper">Click here</a></h4> -->
+    <h2>Authors</h2>
+    <h3> Jihwan Lee<sup>1</sup>, Kevin Huang<sup>1</sup>, Kleanthis Avramidis<sup>1</sup>, Simon Pistrosch<sup>2</sup>, Monica Gonzalez-Machorro<sup>2</sup>, Yoonjeong Lee<sup>1</sup>, Björn Schuller<sup>2</sup>, Louis Goldstein<sup>3</sup>, Shrikanth Narayanan<sup>1</sup><br>
+    </h3>
+    <h4>
+    <sup>1</sup>Signal Analysis and Interpretation Laboratory, University of Southern California, USA<br>
+    <sup>2</sup>CHI – Chair of Health Informatics, Technical University of Munich, Germany<br>
+    <sup>3</sup>Department of Linguistics, University of Southern California, USA
+    </h4>
+
+    <hr />
+    <h2>Abstract</h2>
+    <p>We present a model for predicting articulatory features from surface electromyography (EMG) signals during speech production. The proposed model integrates convolutional layers and a Transformer block, followed by separate predictors for articulatory features. Our approach achieves a high prediction correlation of approximately 0.9 for most articulatory features. Furthermore, we demonstrate that these predicted articulatory features can be decoded into intelligible speech waveforms. To our knowledge, this is the first method to decode speech waveforms from surface EMG via articulatory features, offering a novel approach to EMG-based speech synthesis. Additionally, we analyze the relationship between EMG electrode placement and articulatory feature predictability, providing knowledge-driven insights for optimizing EMG electrode configurations. The source code and decoded speech samples are publicly available.</p>
+    <!-- <h2>Abstract</h2>
+    <p></p> -->
+
+    </article>
+    <div><hr />
+    <article>
+    <h2>Decoded Speech Samples</h2>
+    <h3>These are the first four samples from the test set. They are not cherry-picked.</h3>
+    <table>
+    <tbody>
+    </tbody>
+    </table>
+    <br />
+    <table>
+    <tbody>
+
+
+    <tr>
+        <td style="text-align: center"><i><b>Models</b></i></td>
+        <td style="text-align: center">His idea was that meteorites might be falling in a heavy shower upon the planet or that a huge volcanic explosion was in progress.</td>
+        <td style="text-align: center">The chances against anything manlike on Mars are a million to one, he said.</td>
+        <td style="text-align: center">I, myself, heard nothing of that.</td>
+        <td style="text-align: center">For a minute, he scarcely realized what this meant and although the heat was excessive he clambered down into the pit close to the bulk to see thing more clearly.</td>
+
+        </tr>
+    <tr>
+        <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i> </i></td>
+        <td style="text-align: center"><img class="fit-picture"src="samples/gt/118_audio_clean.png"></img></td>
+        <td style="text-align: center"><img class="fit-picture"src="samples/gt/120_audio_clean.png"></img></td>
+        <td style="text-align: center"><img class="fit-picture"src="samples/gt/163_audio_clean.png"></img></td>
+        <td style="text-align: center"><img class="fit-picture"src="samples/gt/183_audio_clean.png"></img></td>
+        
+        </tr>
+        <tr>
+        <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i>Ground truth</i></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/gt/118_audio_clean.wav" /></audio></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/gt/120_audio_clean.wav" /></audio></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/gt/163_audio_clean.wav" /></audio></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/gt/183_audio_clean.wav" /></audio></td>
+        
+        </tr>
+        <tr><td colspan="4"> <i> <br><br></i></td></tr>
+    <tr>
+        <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i> </i></td>
+        <td style="text-align: center"><img class="fit-picture"src="samples/resynthesis/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_ema.png"></img></td>
+        <td style="text-align: center"><img class="fit-picture"src="samples/resynthesis/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_ema.png"></img></td>
+        <td style="text-align: center"><img class="fit-picture"src="samples/resynthesis/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_ema.png"></img></td>
+        <td style="text-align: center"><img class="fit-picture"src="samples/resynthesis/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_ema.png"></img></td>
+        
+        </tr>
+        <tr>
+        <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i>Resynthesis</i></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/resynthesis/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_ema.wav" /></audio></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/resynthesis/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_ema.wav" /></audio></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/resynthesis/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_ema.wav" /></audio></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/resynthesis/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_ema.wav" /></audio></td>
+        
+        </tr>
+    <tr><td colspan="4"> <i> <br><br></i></td></tr>
+    <tr>
+    <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i> </i></td>
+    <td style="text-align: center"><img class="fit-picture"src="samples/gaddy2022/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_mel.png"></img></td>
+    <td style="text-align: center"><img class="fit-picture"src="samples/gaddy2022/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_mel.png"></img></td>
+    <td style="text-align: center"><img class="fit-picture"src="samples/gaddy2022/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_mel.png"></img></td>
+    <td style="text-align: center"><img class="fit-picture"src="samples/gaddy2022/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_mel.png"></img></td>
+    
+    </tr>
+    <tr>
+    <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i>Gaddy et al. (2022)</i></td>
+    <td style="text-align: center"><audio controls="controls"><source src="samples/gaddy2022/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_mel.wav" /></audio></td>
+    <td style="text-align: center"><audio controls="controls"><source src="samples/gaddy2022/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_mel.wav" /></audio></td>
+    <td style="text-align: center"><audio controls="controls"><source src="samples/gaddy2022/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_mel.wav" /></audio></td>
+    <td style="text-align: center"><audio controls="controls"><source src="samples/gaddy2022/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_mel.wav" /></audio></td>
+
+    </tr>
+
+</tr>
+<tr><td colspan="4"> <i> <br><br></i></td></tr>
+<tr>
+<td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i> </i></td>
+<td style="text-align: center"><img class="fit-picture"src="samples/ours/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_ema_pred.png"></img></td>
+<td style="text-align: center"><img class="fit-picture"src="samples/ours/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_ema_pred.png"></img></td>
+<td style="text-align: center"><img class="fit-picture"src="samples/ours/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_ema_pred.png"></img></td>
+<td style="text-align: center"><img class="fit-picture"src="samples/ours/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_ema_pred.png"></img></td>
+
+</tr>
+<tr>
+<td style="text-align: center;padding-right: 20px;padding-left: 20px;color:#0057FF;"><b><i>Ours</i></b></td>
+<td style="text-align: center"><audio controls="controls"><source src="samples/ours/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_ema_pred.wav" /></audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="samples/ours/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_ema_pred.wav" /></audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="samples/ours/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_ema_pred.wav" /></audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="samples/ours/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_ema_pred.wav" /></audio></td>
+
+</tr>
+
+
+</tr>
+
+</tr>
+    </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <h2>Ablation Studies: Articulatory feature-based selection of EMG electrodes</h2>
+
+    <table>
+        <tbody>
+    
+    
+        <tr>
+            <td style="text-align: center"><i><b>EMG electrodes</b></i></td>
+            <td style="text-align: center">His idea was that meteorites might be falling in a heavy shower upon the planet or that a huge volcanic explosion was in progress.</td>
+            <td style="text-align: center">The chances against anything manlike on Mars are a million to one, he said.</td>
+            <td style="text-align: center">I, myself, heard nothing of that.</td>
+            <td style="text-align: center">For a minute, he scarcely realized what this meant and although the heat was excessive he clambered down into the pit close to the bulk to see thing more clearly.</td>
+    
+            </tr>
+        <tr>
+            <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i> </i></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch2346/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_ema_pred.png"></img></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch2346/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_ema_pred.png"></img></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch2346/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_ema_pred.png"></img></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch2346/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_ema_pred.png"></img></td>
+          
+            </tr>
+            <tr>
+            <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i>Set of 4 (ch.2,3,4,6)</i></td>
+            <td style="text-align: center"><audio controls="controls"><source src="samples/ch2346/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_ema_pred.wav" /></audio></td>
+            <td style="text-align: center"><audio controls="controls"><source src="samples/ch2346/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_ema_pred.wav" /></audio></td>
+            <td style="text-align: center"><audio controls="controls"><source src="samples/ch2346/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_ema_pred.wav" /></audio></td>
+            <td style="text-align: center"><audio controls="controls"><source src="samples/ch2346/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_ema_pred.wav" /></audio></td>
+            </tr>
+            <tr><td colspan="4"> <i> <br><br></i></td></tr>
+        <tr>
+            <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i> </i></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch246/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_ema_pred.png"></img></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch246/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_ema_pred.png"></img></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch246/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_ema_pred.png"></img></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch246/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_ema_pred.png"></img></td>
+            
+            </tr>
+            <tr>
+            <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i>Set of 3 (ch.2,4,6)</i></td>
+            <td style="text-align: center"><audio controls="controls"><source src="samples/ch246/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_ema_pred.wav" /></audio></td>
+            <td style="text-align: center"><audio controls="controls"><source src="samples/ch246/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_ema_pred.wav" /></audio></td>
+            <td style="text-align: center"><audio controls="controls"><source src="samples/ch246/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_ema_pred.wav" /></audio></td>
+            <td style="text-align: center"><audio controls="controls"><source src="samples/ch246/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_ema_pred.wav" /></audio></td>
+            
+            </tr>
+        <tr><td colspan="4"> <i> <br><br></i></td></tr>
+        <tr>
+        <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i> </i></td>
+        <td style="text-align: center"><img class="fit-picture"src="samples/ch24/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_ema_pred.png"></img></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch24/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_ema_pred.png"></img></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch24/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_ema_pred.png"></img></td>
+            <td style="text-align: center"><img class="fit-picture"src="samples/ch24/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_ema_pred.png"></img></td>
+                   
+        </tr>
+        <tr>
+        <td style="text-align: center;padding-right: 20px;padding-left: 20px;"><i>Set of 2 (ch.2,4)</i></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/ch24/emg_data_=_voiced_parallel_data_=_5-4_=_118_audio_clean_ema_pred.wav" /></audio></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/ch24/emg_data_=_voiced_parallel_data_=_5-4_=_120_audio_clean_ema_pred.wav" /></audio></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/ch24/emg_data_=_voiced_parallel_data_=_5-4_=_163_audio_clean_ema_pred.wav" /></audio></td>
+        <td style="text-align: center"><audio controls="controls"><source src="samples/ch24/emg_data_=_voiced_parallel_data_=_5-4_=_183_audio_clean_ema_pred.wav" /></audio></td>  
+        </tr>
+    
+    </tr>
+
+    
+    
+    </tr>
+    
+    </tr>
+        </tbody>
+        </table>
+        <br />
+        <br />
+        <br />
+
+        <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+   
+
+
+    
+    <br><br><br><br><br><br><br><br>
+    
+    
+
+    <br />
+    
+
+    
+  
+    
+    <br><br><br><br><br><br><br><br>
+    
+    
+    </article>
+    </div>
+    </body>
+    </html>
+    
