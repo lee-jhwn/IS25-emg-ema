@@ -15,10 +15,11 @@ We present a model for predicting articulatory features from surface electromyog
 Speech samples are available [here](https://lee-jhwn.github.io/IS25-emg-ema/ "sample page").
 
 ## Data
+We used the identical dataset from these papers [Digital Voicing of Silent Speech (EMNLP 2020)](https://aclanthology.org/2020.emnlp-main.445.pdf), [An Improved Model for Voicing Silent Speech (ACL 2021)](https://aclanthology.org/2021.acl-short.23.pdf), and the dissertation [Voicing Silent Speech](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2022/EECS-2022-68.pdf). To download the dataset, please refer to their official [repository](https://github.com/dgaddy/silent_speech).
 
+## Environment Setup
 
-
-## Preprocessing
+## Pre-processing
 
 
 
